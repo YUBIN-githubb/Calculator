@@ -8,8 +8,22 @@ public class Calculator {
             Scanner sc = new Scanner(System.in);
             System.out.println("Write first number to calculate: ");
             int firstNumber = sc.nextInt();
+
+            if (firstNumber < 0) {
+                System.out.println("Please enter a positive number");
+                System.out.println("Write first number to calculate: ");
+                firstNumber = sc.nextInt();
+            }
+
             System.out.println("Write second number to calculate: ");
             int secondNumber = sc.nextInt();
+
+            if (secondNumber < 0) {
+                System.out.println("Please enter a positive number");
+                System.out.println("Write second number to calculate: ");
+                secondNumber = sc.nextInt();
+            }
+
             System.out.println("Write operator to calculate: ");
             String operator = sc.next();
 
