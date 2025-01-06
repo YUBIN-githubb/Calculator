@@ -1,8 +1,11 @@
 package org.example.calculator;
 
+import org.example.calculator2.Calculator2;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Calculator {
+public class App {
     public static void main(String[] args) {
         while(true) {
             Scanner sc = new Scanner(System.in);
@@ -27,24 +30,16 @@ public class Calculator {
             System.out.println("Write operator to calculate: ");
             String operator = sc.next();
 
-            int result = 0;
-            if(operator.equals("+")){
-                result = firstNumber + secondNumber;
-            } else if (operator.equals("-")) {
-                result = firstNumber - secondNumber;
-            } else if (operator.equals("*")) {
-                result = firstNumber * secondNumber;
-            } else if (operator.equals("/")) {
-                if(secondNumber == 0){
-                    System.out.println("Division by zero is impossible");
-                    System.out.println("first number is: " + firstNumber);
-                    System.out.println("rewrite the second number: ");
-                    secondNumber = sc.nextInt();
-                }
-                result = firstNumber / secondNumber;
-            }
 
-            System.out.println("result is " + result);
+            Calculator2 doCalculate = new Calculator2();
+            doCalculate.calculate(firstNumber, secondNumber, operator);
+            doCalculate.fullGetter();
+            doCalculate.printResult();
+
+
+
+
+
 
             System.out.println("If you wanna continue, Write continue. Unless write exit. Write answer: ");
             String answer = sc.next();
